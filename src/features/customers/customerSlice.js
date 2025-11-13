@@ -30,7 +30,7 @@ export default function customerReducer(state = initialstateCustomer, action) {
 //   });
 //   console.log(store.getState());
 
-export function createName(fullName, nationalID) {
+export function createCustomer(fullName, nationalID) {
   return {
     type: "customer/createName",
     payload: {
@@ -41,7 +41,7 @@ export function createName(fullName, nationalID) {
   };
 }
 
-export function updateName(fullName) {
+export function updateCustomer(fullName) {
   return {
     type: "customer/updateName",
     fullName: "Sajesh",
