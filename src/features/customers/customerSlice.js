@@ -34,8 +34,8 @@ export function createCustomer(fullName, nationalID) {
   return {
     type: "customer/createName",
     payload: {
-      fullName: "Martin",
-      nationalID: "passport",
+      fullName: fullName,
+      nationalID: nationalID,
       createdAt: new Date().toISOString(),
     },
   };
