@@ -63,7 +63,11 @@ function AccountOperations() {
           </select>
 
           <button onClick={handleDeposit} disabled={isLoading}>
-            {isLoading ? "Converting" : `Deposit ${depositAmount}`}
+            {isLoading
+              ? "Converting..."
+              : depositAmount
+              ? `Deposit $${depositAmount}`
+              : "Deposit"}
           </button>
         </div>
 
@@ -75,7 +79,7 @@ function AccountOperations() {
             onChange={(e) => setWithdrawalAmount(+e.target.value)}
           />
           <button onClick={handleWithdrawal}>
-            Withdraw {withdrawalAmount}
+            {withdrawalAmount ? `Withdraw $${withdrawalAmount}` : "Withdraw"}
           </button>
         </div>
 
@@ -96,7 +100,7 @@ function AccountOperations() {
         </div>
 
         {currentLoan > 0 && (
-          <div>
+          <div className="loan-info">
             <span>
               Pay back ${currentLoan} ({currentLoanPurpose})
             </span>
